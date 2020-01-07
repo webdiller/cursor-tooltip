@@ -18,6 +18,7 @@
     max-width: 400px;
     padding: 5px 20px;
     background-color: rgba(0,0,0,.8);
+    margin-right: 20px;
     opacity: 0;
     visibility: hidden;
     z-index: -1;
