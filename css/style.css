@@ -1,0 +1,153 @@
+﻿body {
+    margin: 0;
+    padding: 0;
+    font-family: "Inconsolata";
+    min-height: 100vh;
+    min-width: 340px;
+}
+
+.lesson__wrapper {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    font-weight: 600;
+}
+
+.cursor-tooltip {
+    position: fixed;
+    max-width: 400px;
+    padding: 5px 20px;
+    background-color: rgba(0,0,0,.8);
+    opacity: 0;
+    visibility: hidden;
+    z-index: -1;
+    color: #fff;
+    transition: opacity .3s ease;
+}
+
+.cursor-tooltip.active {
+    opacity: 1;
+    visibility: visible;
+    z-index: 200;
+}
+.cursor-tooltip__title {
+    font-size: 16px;
+    padding-bottom: 5px;
+}
+.cursor-tooltip__text {
+    font-size: 14px;
+}
+
+.animals-header {}
+
+.animals-header__wrapper {
+    padding: 50px 20px 20px 20px;
+    background-color: rgb(226, 226, 226);
+}
+.animals-header__title {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px 20px;
+    font-size: 32px;
+    background-color: rgb(214, 214, 214);
+    font-weight: 700;
+}
+
+.images__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    justify-content: space-between;
+    max-width: 1040px;
+    margin: 50px auto;
+    padding: 0 20px;
+}
+
+.images__img-wrapper {
+    flex-basis: 32%;
+    width: 32%;
+    margin-bottom: 20px;
+    height: 300px;
+    overflow: hidden;
+    background-color: rgba(0,0,0,.1);
+    position: relative;
+}
+
+.images__img-wrapper::before {
+    content: attr(data-name);
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 100;
+    padding: 5px 10px;
+    background-color: #fff;
+    font-size: 18px;
+    text-align: right;
+}
+
+.images__img {
+    transform: scale(1.03);
+    transition: all .3s ease;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.images__img:hover {
+    transform: scale(1);
+}
+
+@media only screen and (max-width:991px) {
+    .images__wrapper {
+        justify-content: center;
+        margin: 50px auto;
+    }
+    .images__img-wrapper {
+        flex-basis: 40%;
+        width: 40%;
+        height: 350px;
+        margin: 0 10px 20px 10px;
+    }
+    .images__img-wrapper::before {
+        content: attr(data-name);
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: 100;
+        padding: 5px 10px;
+        background-color: #fff;
+        font-size: 16px;
+    }
+}
+
+@media only screen and (max-width:767px) {
+    .animals-header__title {
+        font-size: 24px;
+    }
+    .images__wrapper {
+        flex-direction: column;
+        align-items: center;
+    }
+    .images__img-wrapper {
+        flex-basis: auto;
+        width: 50%;
+        min-width: 300px;
+        height: 350px;
+        margin-left: 0;
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+}
+
+@media only screen and (max-width:576px) {
+    .animals-header__wrapper {
+        padding: 30px 20px 10px 20px;
+    }
+    .animals-header__title {
+        font-size: 18px;
+        padding: 5px 20px;
+    }
+    .images__wrapper {
+        margin: 30px auto;
+    }
+}
